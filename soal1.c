@@ -60,7 +60,7 @@ int main(){
         scanf("%s %d", id, &durasi);
         enqueue(&q, id, durasi);
     }
-    printf("ORDER ");
+    printf("ORDER");
     Node *temp = q.front;
     
     while (temp != NULL){
