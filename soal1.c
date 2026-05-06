@@ -60,13 +60,14 @@ int main(){
         scanf("%s %d", id, &durasi);
         enqueue(&q, id, durasi);
     }
-    printf("ORDER");
+
+    printf("ORDER ");
     Node *temp = q.front;
-    
-    while (temp != NULL){
+    while (temp->next != NULL){
         printf("%s ", temp->id);
         temp = temp->next;
     }
+    printf("%s", temp->id);
     printf("\n");
 
     int totaltunggu = 0;
@@ -78,17 +79,11 @@ int main(){
         waktutunggusekarang += temp->duration; 
         temp = temp->next;
     }
-    printf("WAIT %d\n", totaltunggu);
 
+    printf("WAIT %d\n", totaltunggu);
+    
     while (q.front != NULL){
         dequeue(&q);
     }
     return 0;
 }
-
-
-
-
-
-
-
